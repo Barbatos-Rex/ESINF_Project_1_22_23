@@ -18,7 +18,6 @@ public class DataSheetImporter implements Importer {
 
             try {
                 String[] line = sc.nextLine().split("\",\"");
-
                 if (nLine == 1) {
                     nLine++;
                     continue;

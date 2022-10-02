@@ -1,9 +1,6 @@
 package barbatos_rex1;
 
-import barbatos_rex1.domain.DataSheet;
-import barbatos_rex1.domain.Item;
-import barbatos_rex1.domain.Product;
-import barbatos_rex1.domain.Year;
+import barbatos_rex1.domain.*;
 import barbatos_rex1.io.Importer;
 import barbatos_rex1.io.DataSheetImporter;
 
@@ -23,6 +20,6 @@ public class Main {
         System.out.println(countries);
         System.out.println(new EX3(sheet).findMinNumberOfAreasThatTogetherSurpassIn(50000000,new Year(2010,2010)));
         System.out.println(new EX4(sheet).continousGrowthYearsOf(new Item(5510,"Production",515,"Apples")));
-
+        System.out.println(new EX5(sheet).greatestDifferenceInProductionIn(new Area("\"QCL","Crops and livestock products",2,"Afghanistan")));
     }
 }
