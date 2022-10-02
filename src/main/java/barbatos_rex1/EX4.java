@@ -16,8 +16,7 @@ public class EX4 {
     }
 
 
-
-    public Map<String, ContinousYears> continousGrowthYearsOf(Item i){
+    public Map<String, ContinousYears> continousGrowthYearsOf(Item i) {
 
         List<Product> productList = sheet.itemMap().get(i);
 
@@ -25,28 +24,21 @@ public class EX4 {
 
         return generateMap(productList);
 
-
-
-
-
-
-
-
-
-
-
-
     }
 
     private Map<String, ContinousYears> generateMap(List<Product> productList) {
-        Map<String,ContinousYears> result = new HashMap<>();
-        ContinousYears cy = new ContinousYears();
-        for (Product p: productList){
-
+        Map<String, ContinousYears> result = new HashMap<>();
+        for (Product p : productList) {
+            if (!result.containsKey(p.area().area())) {
+                result.put(p.area().area(), new ContinousYears());
+            }
+            result.get(p.area().area()).treatYear(p.year(), p.value().value());
         }
 
+        result.values().forEach(continousYears -> continousYears.merge());
 
 
+        return result;
     }
 
 

@@ -22,5 +22,7 @@ public class Main {
         List<String> countries = ex2.listContriesThatProducedItemByQuantity(new Item(5510,"Production",515,"Apples"),3000000);
         System.out.println(countries);
         System.out.println(new EX3(sheet).findMinNumberOfAreasThatTogetherSurpassIn(50000000,new Year(2010,2010)));
+        System.out.println(new EX4(sheet).continousGrowthYearsOf(new Item(5510,"Production",515,"Apples")));
+
     }
 }
